@@ -17,7 +17,7 @@ global:
       # Should a Secret be created by the chart or not.
       # Set this to false if you wish to create the Secret yourself or using another tool.
       # The Secret should contain clientId for the ID and clientToken for the token.
-      create: true
+      create: false
       # Annotations to add to the secret.
       annotations: {}
       # The name of the Wiz Service Account Secret.
@@ -46,7 +46,7 @@ global:
     # Should a Secret be created by the chart or not.
     # Set this to false if you wish to create the Secret yourself or using another tool.
     # The Secret should contain httpProxy, httpsProxy, noProxyAddress, caCertificate and clientCertificate.
-    create: true
+    create: false
     secretName: "wiz-proxy" # The name of the proxy Secret.
     annotations: {} # Annotations to be set on the secret
 
@@ -120,19 +120,29 @@ global:
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-kubernetes-connector/values.yaml
 #
 wiz-kubernetes-connector:
-  enabled: false
+  enabled: true
   wizApiToken:
     secret:
       create: false # Secret created by wiz-kubernetes-integration.
   httpProxyConfiguration:
     create: false # Secret created by wiz-kubernetes-integration.
+  autoCreateConnector:
+    enabled: true
+    clusterFlavor: EKS
+    connectorName: "test-argo"
+    createJobAnnotations:
+      argocd.argoproj.io/hook: PostSync
+  wiz-broker:
+    enabled: true
+    rollmeAnnotation:
+      enabled: false
 
 # Wiz Admission Controller
 # Configuration values for the wiz-admission-controller dependency
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-admission-controller/values.yaml
 #
 wiz-admission-controller:
-  enabled: false
+  enabled: true
   wizApiToken:
     secret:
       create: false # Secret created by wiz-kubernetes-integration.
