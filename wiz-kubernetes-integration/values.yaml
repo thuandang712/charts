@@ -131,7 +131,7 @@ wiz-kubernetes-connector:
     clusterFlavor: EKS
     connectorName: "test-argo"
     createJobAnnotations:
-      argocd.argoproj.io/hook: PostSync
+      Owner: Thuan
   wiz-broker:
     enabled: true
     rollmeAnnotation:
