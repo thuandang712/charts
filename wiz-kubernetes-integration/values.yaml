@@ -168,13 +168,8 @@ wiz-sensor:
     # if mirroring the image.
     required: true
     # set to false when using an existing secret
-    create: true
+    create: false
+    name: sensor-image-pull
 
-    # This value is a must in order to pull the image from a private repository. We use helm
-    # to create a docker formatted json, encoded in base64.
-    # In case you want use an existing value (perhaps created via "kubectl create secret docker-registry ...")
-    # please mark "create" above as false
-    username: "acr-wizio-b1af0ff4-f15b-46f0-aa77-d928f254babe"
-    password: "0gQXt7fYfwGgtQWVpIaAgBhG39OB53G+WJwnA2DC7A+ACRB8766N"
   tolerations:
   - operator: "Exists"
