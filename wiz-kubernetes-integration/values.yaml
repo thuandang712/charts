@@ -144,7 +144,7 @@ wiz-kubernetes-connector:
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-admission-controller/values.yaml
 #
 wiz-admission-controller:
-  enabled: true
+  enabled: false
   wizApiToken:
     secret:
       create: false # Secret created by wiz-kubernetes-integration.
@@ -164,12 +164,11 @@ wiz-sensor:
   httpProxyConfiguration:
     create: false # Secret created by wiz-kubernetes-integration.
   imagePullSecret:
-    # The default sensor registry requires a pull secret. Set to false
-    # if mirroring the image.
     required: true
-    # set to false when using an existing secret
     create: false
     name: sensor-image-pull
 
   tolerations:
   - operator: "Exists"
+    effect: "NoSchedule"
+
