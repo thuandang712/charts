@@ -122,5 +122,6 @@ wiz-sensor:
 
   tolerations:
   - operator: "Exists"
-    effect: "NoSchedule"
+    key: "key1"
+    # effect: "NoSchedule"
 
