@@ -130,10 +130,10 @@ wiz-kubernetes-connector:
     enabled: true
     clusterFlavor: EKS
     connectorName: "test-argo"
-    createJobAnnotations:
-      #argocd.argoproj.io/hook: PostSync
-      argocd.argoproj.io/sync-wave: "-1" # https://argo-cd.readthedocs.io/en/latest/user-guide/sync-waves/#how-do-i-configure-waves
-      argocd.argoproj.io/hook: PreSync # Wiz uses a helm hook called pre-install which maps to PreSync phase in argocd
+    # createJobAnnotations:
+    #   #argocd.argoproj.io/hook: PostSync
+    #   argocd.argoproj.io/sync-wave: "-1" # https://argo-cd.readthedocs.io/en/latest/user-guide/sync-waves/#how-do-i-configure-waves
+    #   argocd.argoproj.io/hook: PreSync # Wiz uses a helm hook called pre-install which maps to PreSync phase in argocd
   wiz-broker:
     enabled: true
     rollmeAnnotation:
