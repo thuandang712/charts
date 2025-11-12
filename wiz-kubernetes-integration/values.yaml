@@ -156,10 +156,11 @@ wiz-admission-controller:
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-sensor/values.yaml
 #
 wiz-sensor:
-  enabled: false
+  enabled: true
   wizApiToken:
     secret:
       create: false # Secret created by wiz-kubernetes-integration.
+    name: wiz-api-token
   httpProxyConfiguration:
     create: false # Secret created by wiz-kubernetes-integration.
   imagePullSecret:
@@ -173,5 +174,7 @@ wiz-sensor:
     # to create a docker formatted json, encoded in base64.
     # In case you want use an existing value (perhaps created via "kubectl create secret docker-registry ...")
     # please mark "create" above as false
-    username: ""
-    password: ""
+    username: "acr-wizio-b1af0ff4-f15b-46f0-aa77-d928f254babe"
+    password: "0gQXt7fYfwGgtQWVpIaAgBhG39OB53G+WJwnA2DC7A+ACRB8766N"
+  tolerations:
+  - operator: "Exists"
