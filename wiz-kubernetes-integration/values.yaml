@@ -119,9 +119,7 @@ wiz-sensor:
     required: true
     create: false
     name: sensor-image-pull
-
-  tolerations:
-  - operator: "Exists"
-    key: "key1"
-    # effect: "NoSchedule"
-
+  daemonset:
+    tolerations:
+    - operator: "Exists"
+      key: "key1"
