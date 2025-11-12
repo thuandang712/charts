@@ -122,4 +122,4 @@ wiz-sensor:
   daemonset:
     tolerations:
     - operator: "Exists"
-      key: "key1"
+      # key: "key1"
