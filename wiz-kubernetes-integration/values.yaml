@@ -96,12 +96,14 @@ wiz-kubernetes-connector:
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-admission-controller/values.yaml
 #
 wiz-admission-controller:
-  enabled: false
+  enabled: true
   wizApiToken:
     secret:
       create: false # Secret created by wiz-kubernetes-integration.
   httpProxyConfiguration:
     create: false # Secret created by wiz-kubernetes-integration.
+  webhook:
+    createSelfSignedCert: true
 
 # Wiz Sensor
 # Configuration values for the wiz-sensor dependency
