@@ -107,7 +107,12 @@ wiz-admission-controller:
   imageIntegrityWebhook:
     enabled: true
     policies: ["thuan-test-92402"] 
-
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::891376972353:role/wiz-ac-sa-role
+  imageRegistryClient:
+    credentialHelpers: # possible values: amazon, azure, google, github
+    - "amazon"
 # Wiz Sensor
 # Configuration values for the wiz-sensor dependency
 # ref: https://github.com/wiz-sec/charts/blob/master/wiz-sensor/values.yaml
