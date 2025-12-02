@@ -105,7 +105,7 @@ wiz-admission-controller:
   webhook:
     createSelfSignedCert: true
   imageIntegrityWebhook:
-    enabled: false
+    enabled: true
     policies: ["thuan-test-92402"] 
 
 # Wiz Sensor
