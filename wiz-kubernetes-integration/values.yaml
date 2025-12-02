@@ -104,6 +104,9 @@ wiz-admission-controller:
     create: false # Secret created by wiz-kubernetes-integration.
   webhook:
     createSelfSignedCert: true
+  imageIntegrityWebhook:
+    enabled: false
+    policies: ["thuan-test-92402"] 
 
 # Wiz Sensor
 # Configuration values for the wiz-sensor dependency
