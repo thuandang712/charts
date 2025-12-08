@@ -47,23 +47,8 @@ global:
     pullPolicy: "" # Container image pull policy. One of Always, Never, IfNotPresent.
   imagePullSecrets: [] # Secrets for container image registry keys as described in https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod
 
-
   nodeSelector: {} # custom assignment to nodes
-  affinity:
-    # run on linux arm64 or amd64 nodes
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/os
-            operator: In
-            values:
-            - linux
-          - key: kubernetes.io/arch
-            operator: In
-            values:
-            - arm64
-            - amd64
+
 
 
 
